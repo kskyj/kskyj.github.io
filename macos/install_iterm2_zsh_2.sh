@@ -17,7 +17,7 @@ sed -i -e 's/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"bullet-train\"/g' ~/.zshrc
 # zshrc 설정
 echo "# zshrc 설정"
 echo 'alias vi="vim"' >> ~/.zshrc
-echo 'prompt_context() {\n\tif [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then\n\t\tprompt_segment black default "%(!.%{%F{yellow}%}.)$USER"\n\tfi\n}' >> ~/.zshrc
+echo -e 'prompt_context() {\n\tif [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then\n\t\tprompt_segment black default "%(!.%{%F{yellow}%}.)$USER"\n\tfi\n}' >> ~/.zshrc
 
 # JetBrainsMono Font
 echo "# Install JetBrainsMono Font"
