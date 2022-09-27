@@ -41,7 +41,7 @@ https://fragilememor.gitbook.io/kskyj-rpa-kium/
 >
 > #### **편안함에 이르시기를 바랍니다** :smile:****
 
-{% hint style="success" %}
+
 프로그램은 라오어님 무한매수법 까페 > 자동프로그램게시판 에서 작성자 **지니22** 아이디로 작성글 검색하면 다운로드 받을수 있습니다.
 
 * Mobile
