@@ -1,16 +1,19 @@
+https://fragilememor.gitbook.io/kskyj-rpa-kium/
+
+
 # 🤖 라오어님 무한매수법 스마트 RPA \[지니RPA] 소개
 
 이 프로그램은 라오어님의 무한매수법을 영웅문 글로벌(키움 HTS)에서 **스마트하게 자동으로 매매 해주고 투자금, 예수금, 신규 종목 추천, 투자 대비 수익률, 원화주문 설정등을 자동으로 설정 및 관리**해주는 프로그램 입니다.
 
-{% embed url="https://cafe.naver.com/infinitebuying" %}
+
 
 이 프로그램의 철학과, 주요 기능에 대한 배경 및 설명은 [개발일지](https://cafe.naver.com/infinitebuying/3548) 를 읽어서 참고하세요.**(최소 1과 6, 8은 읽으시길 권장합니다.)**
 
-{% hint style="info" %}
+
 도움말의 처음 설정하기 는 반드시 해야하고, 자주하는질문(FAQ)에 대부분 문제점을의 해결할 수 있습니다.
 
 퀵가이드를 보면 빠르게 사용하는 법을 알수 있습니다.
-{% endhint %}
+
 
 
 
