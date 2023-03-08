@@ -9,8 +9,20 @@ brew install --cask visual-studio-code
 # intellij community
 brew install --cask intellij-idea-ce
 
-# github client
-brew install --cask github
-
 # postman
 brew install --cask postman
+
+# Notion
+brew install --cask notion
+
+# Slack
+brew install --cask slack
+
+# DB Eaver
+brew install --cask dbeaver-community
+
+# Karabiner
+brew install --cask karabiner-elements
+
+# rectangle
+brew install --cask rectangle
