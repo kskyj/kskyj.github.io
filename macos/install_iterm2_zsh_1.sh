@@ -6,6 +6,9 @@
 echo "# Install apple command line tool"
 xcode-select --install
 
+# NODE TLS DISABLE
+echo 'export NODE_TLS_REJECT_UNAUTHORIZED=0' >> ~/.zprofile
+
 # homebrew /Users/$USER/.zprofile
 echo "# Install homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
