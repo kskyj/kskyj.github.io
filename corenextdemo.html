@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>corenext demo</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    .square {
+      fill: #FDE9D5;
+      stroke: #F9BB80;
+      stroke-width: 2;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="createSquare()">create</button>
+  
+  <div class="scrollable-svg-container">
+    <svg width="1200" height="1000">  /* 보여줄 사이즈 설정 */
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7"
+                refX="10" refY="3.5" orient="auto-start-reverse">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#AC8AFC"/>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <script>
+    let svg = d3.select("svg");
+    let squareCount = 0;
+    let squaresPerRow = 5;
+    let squareSize = 150;
+    let margin = 60;
+
+    function createSquare() {
+      let x = (squareCount % squaresPerRow) * (squareSize + margin);
+      let y = Math.floor(squareCount / squaresPerRow) * (squareSize + margin);
+
+      svg.append("rect")
+        .attr("x", x)
+        .attr("y", y)
+        .attr("width", squareSize)
+        .attr("height", squareSize)
+        .attr("class", "square");
+
+      if (squareCount > 0 && squareCount % 5 != 0) {
+        let line = svg.append("line")
+          .attr("x1", (squareCount - 1) % squaresPerRow * (squareSize + margin) + squareSize)
+          .attr("y1", Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + (squareSize / 2))
+          .attr("x2", x)
+          .attr("y2", y + squareSize / 2)
+          .attr("stroke", "#AC8AFC")
+          .attr("stroke-width", 2)
+          .attr("marker-end", "url(#arrowhead)");
+      }
+
+      //5개가 넘을경우 화살표 위치 변경
+      if (squareCount % 5 == 0) {
+        let line = svg.append("line")
+          .attr("x1", (squareCount - 1) % squaresPerRow * (squareSize + margin) + (squareSize / 2))
+          .attr("y1", Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + squareSize)
+          .attr("x2", x + (squareSize / 2))
+          .attr("y2", y)
+          .attr("stroke", "#AC8AFC")
+          .attr("stroke-width", 2)
+          .attr("marker-end", "url(#arrowhead)");
+      }
+
+      squareCount++;
+    }
+  </script>
+</body>
+</html>
