@@ -11,16 +11,16 @@
       stroke-width: 2;
     }
     .square-container{
-        padding: 10px;
+        margin: 10px;
     }
-    .mbutton{
+    .main-button{
         width: 130px;
         height: 30px;
     }
   </style>
 </head>
 <body>
-  <div><button class="mbutton" onclick="createSquare()">create</button></div>
+  <button class="main-button" onclick="createSquare('Domain')">create</button>
   <div class="square-container">
     <svg width="1200" height="1000">  /* 보여줄 사이즈 설정 */
       <defs>
@@ -36,13 +36,19 @@
     let svg = d3.select("svg");
     let squareCount = 0;
     let squaresPerRow = 5;
-    let squareSize = 150;
-    let margin = 60;
+    let squareSize = 140;
+    let margin = 70;
 
-    function createSquare() {
+    let arrowColor = "#AC8AFC"
+    let arrowSize = 2
+
+    function createSquare(text) {
       let x = (squareCount % squaresPerRow) * (squareSize + margin);
       let y = Math.floor(squareCount / squaresPerRow) * (squareSize + margin);
       
+      // 0,0 보정
+      x = x + 1;
+      y = y + 1;
       
       svg.append("rect")
         .attr("x", x)
@@ -50,27 +56,74 @@
         .attr("width", squareSize)
         .attr("height", squareSize)
         .attr("class", "square");
+      
+      svg.append("text")
+        .attr("x", x + squareSize / 2)
+        .attr("y", y + squareSize / 2)
+        .attr("text-anchor", "middle")
+        .attr("alignment-baseline", "middle")
+        .text((squareCount + 1) + " " + text);
 
       if (squareCount > 0 && squareCount % 5 != 0) {
+        let x1 = (squareCount - 1) % squaresPerRow * (squareSize + margin) + squareSize
+        let y1 = Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + (squareSize / 2)
+        // 0,0 보정
+        x1 = x1 + 1
+        y1 = y1 + 1
         let line = svg.append("line")
-          .attr("x1", (squareCount - 1) % squaresPerRow * (squareSize + margin) + squareSize)
-          .attr("y1", Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + (squareSize / 2))
+          .attr("x1", x1)
+          .attr("y1", y1)
           .attr("x2", x)
           .attr("y2", y + squareSize / 2)
-          .attr("stroke", "#AC8AFC")
-          .attr("stroke-width", 2)
+          .attr("stroke", arrowColor)
+          .attr("stroke-width", arrowSize)
           .attr("marker-end", "url(#arrowhead)");
       }
 
-      //5개가 넘을경우 화살표 위치 변경
+      //매줄의 5번째 화살표 위치 변경
       if (squareCount > 0 && squareCount % 5 == 0) {
-        let line = svg.append("line")
-          .attr("x1", (squareCount - 1) % squaresPerRow * (squareSize + margin) + (squareSize / 2))
-          .attr("y1", Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + squareSize)
-          .attr("x2", x + (squareSize / 2))
+        // let line = svg.append("line")
+        //   .attr("x1", (squareCount - 1) % squaresPerRow * (squareSize + margin) + (squareSize / 2))
+        //   .attr("y1", Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + squareSize)
+        //   .attr("x2", x + (squareSize / 2))
+        //   .attr("y2", y)
+        //   .attr("stroke", arrowColor)
+        //   .attr("stroke-width", 2)
+        //   .attr("marker-end", "url(#arrowhead)");
+
+        // 라인 3개 긋기
+        let firstStandardX = (squareCount - 1) % squaresPerRow * (squareSize + margin) + (squareSize / 2)
+        let firstStandardY = Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + squareSize
+        let secondStandardX = y - (margin / 2)
+        let thirdStandardX = x + (squareSize / 2)
+        
+        // 0,0 보정          
+        firstStandardX = firstStandardX + 1
+        firstStandardY = firstStandardY + 1
+        
+        let line1 = svg.append("line")
+          .attr("x1", firstStandardX)
+          .attr("y1", firstStandardY)
+          .attr("x2", firstStandardX)
+          .attr("y2", secondStandardX)
+          .attr("stroke", arrowColor)
+          .attr("stroke-width", arrowSize);
+        
+        let line2 = svg.append("line")
+          .attr("x1", firstStandardX)
+          .attr("y1", secondStandardX)
+          .attr("x2", thirdStandardX)
+          .attr("y2", secondStandardX)
+          .attr("stroke", arrowColor)
+          .attr("stroke-width", arrowSize);
+        
+        let line3 = svg.append("line")
+          .attr("x1", thirdStandardX)
+          .attr("y1", secondStandardX)
+          .attr("x2", thirdStandardX)
           .attr("y2", y)
-          .attr("stroke", "#AC8AFC")
-          .attr("stroke-width", 2)
+          .attr("stroke", arrowColor)
+          .attr("stroke-width", arrowSize)
           .attr("marker-end", "url(#arrowhead)");
       }
 
