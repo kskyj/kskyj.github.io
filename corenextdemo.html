@@ -25,7 +25,7 @@
     <svg width="1200" height="1000">  /* 보여줄 사이즈 설정 */
       <defs>
         <marker id="arrowhead" markerWidth="10" markerHeight="7"
-                refX="10" refY="3.5" orient="auto-start-reverse">
+                refX="9" refY="3.5" orient="auto">
           <polygon points="0 0, 10 3.5, 0 7" fill="#AC8AFC"/>
         </marker>
       </defs>
@@ -67,8 +67,9 @@
       if (squareCount > 0 && squareCount % 5 != 0) {
         let x1 = (squareCount - 1) % squaresPerRow * (squareSize + margin) + squareSize
         let y1 = Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + (squareSize / 2)
-        // 0,0 보정
-        x1 = x1 + 1
+
+        // 1px 보정
+        x1 = x1 + 2
         y1 = y1 + 1
         let line = svg.append("line")
           .attr("x1", x1)
@@ -97,15 +98,15 @@
         let secondStandardX = y - (margin / 2)
         let thirdStandardX = x + (squareSize / 2)
         
-        // 0,0 보정          
+        // 1px 보정
         firstStandardX = firstStandardX + 1
         firstStandardY = firstStandardY + 1
         
         let line1 = svg.append("line")
           .attr("x1", firstStandardX)
-          .attr("y1", firstStandardY)
+          .attr("y1", firstStandardY + 1)
           .attr("x2", firstStandardX)
-          .attr("y2", secondStandardX)
+          .attr("y2", secondStandardX + 1)
           .attr("stroke", arrowColor)
           .attr("stroke-width", arrowSize);
         
@@ -119,7 +120,7 @@
         
         let line3 = svg.append("line")
           .attr("x1", thirdStandardX)
-          .attr("y1", secondStandardX)
+          .attr("y1", secondStandardX - 1)
           .attr("x2", thirdStandardX)
           .attr("y2", y)
           .attr("stroke", arrowColor)
