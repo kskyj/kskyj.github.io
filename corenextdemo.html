@@ -10,12 +10,18 @@
       stroke: #F9BB80;
       stroke-width: 2;
     }
+    .square-container{
+        padding: 10px;
+    }
+    .mbutton{
+        width: 130px;
+        height: 30px;
+    }
   </style>
 </head>
 <body>
-  <button onclick="createSquare()">create</button>
-  
-  <div class="scrollable-svg-container">
+  <div><button class="mbutton" onclick="createSquare()">create</button></div>
+  <div class="square-container">
     <svg width="1200" height="1000">  /* 보여줄 사이즈 설정 */
       <defs>
         <marker id="arrowhead" markerWidth="10" markerHeight="7"
@@ -36,7 +42,8 @@
     function createSquare() {
       let x = (squareCount % squaresPerRow) * (squareSize + margin);
       let y = Math.floor(squareCount / squaresPerRow) * (squareSize + margin);
-
+      
+      
       svg.append("rect")
         .attr("x", x)
         .attr("y", y)
@@ -56,7 +63,7 @@
       }
 
       //5개가 넘을경우 화살표 위치 변경
-      if (squareCount % 5 == 0) {
+      if (squareCount > 0 && squareCount % 5 == 0) {
         let line = svg.append("line")
           .attr("x1", (squareCount - 1) % squaresPerRow * (squareSize + margin) + (squareSize / 2))
           .attr("y1", Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + squareSize)
