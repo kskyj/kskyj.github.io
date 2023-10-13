@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>corenext demo</title>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<style>
+		.square {
+			fill: #FDE9D5;
+			stroke: #F9BB80;
+			stroke-width: 2;
+		}
+
+		.square-container {
+			margin: 10px;
+		}
+
+		.main-button {
+			width: 50%;
+			height: 30px;
+		}
+
+		.square-button {
+			fill: #CCCCCC;
+			stroke: #AAAAAA;
+			stroke-width: 2;
+		}
+	</style>
+</head>
+
+<body>
+	<button class="main-button" onclick="createSquare('Domain')">create</button>
+	<div class="square-container">
+		<svg width="1200" height="1000"> /* 보여줄 사이즈 설정 */
+			<defs>
+				<marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+					<polygon points="0 0, 10 3.5, 0 7" fill="#AC8AFC" />
+				</marker>
+			</defs>
+		</svg>
+	</div>
+
+	<script>
+		let svg = d3.select("svg");
+		let squareCount = 0;
+		let squaresPerRow = 5;
+		let squareSize = 140;
+		let margin = 70;
+
+		let arrowColor = "#AC8AFC"
+		let arrowSize = 2
+
+		let animationSpeed = 800
+
+		function createSquare(text, clickAction) {
+
+			const transitionLine = d3
+				.transition()
+				.ease(d3.easeSin)
+				.duration(animationSpeed);
+
+			let x = (squareCount % squaresPerRow) * (squareSize + margin);
+			let y = Math.floor(squareCount / squaresPerRow) * (squareSize + margin);
+
+			// 0,0 보정
+			x = x + 1;
+			y = y + 1;
+
+			// 도메인 Square
+			svg.append("rect")
+				.attr("x", x)
+				.attr("y", y)
+				.attr("width", squareSize)
+				.attr("height", squareSize)
+				.attr("class", "square");
+
+			// 도메인 Text
+			svg.append("text")
+				.attr("x", x + (squareSize * 0.5))
+				.attr("y", y + (squareSize * 0.25))
+				.attr("text-anchor", "middle")
+				.attr("alignment-baseline", "middle")
+				.text((squareCount + 1) + " " + text);
+
+			// 도메인 내부 버튼
+			let buttonX = x + (squareSize * 0.25)
+			let buttonY = y + (squareSize * 0.625)
+			const foreignObject = svg.append("foreignObject")
+				.attr("x", buttonX)
+				.attr("y", buttonY)
+				.attr("width", squareSize * 0.5)
+				.attr("height", squareSize * 0.25);
+
+			foreignObject.append("xhtml:button")
+				.attr("x", buttonX)
+				.attr("y", buttonY)
+				.attr("class", "square-button")
+				.text("Click me")
+				.on("click", () => alert(clickAction + "Button Clicked!"));
+
+			// 지정한 개수부터 화살표 다르게 표현
+			if (squareCount > 0 && squareCount % 5 != 0) {
+				let x1 = (squareCount - 1) % squaresPerRow * (squareSize + margin) + squareSize
+				let y1 = Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + (squareSize * 0.5)
+
+				// 1px 보정
+				x1 = x1 + 2
+				y1 = y1 + 1
+				let line = svg.append("line")
+					.attr("x1", x1)
+					.attr("y1", y1)
+					.attr("x2", x)
+					.attr("y2", y + squareSize * 0.5)
+					.attr("stroke", arrowColor)
+					.attr("stroke-width", arrowSize);
+
+				// 애니메이션 효과
+				const lineLength = line.node().getTotalLength();
+				line.attr("stroke-dashoffset", lineLength)
+					.attr("stroke-dasharray", lineLength)
+					.transition(transitionLine)
+					.attr("stroke-dashoffset", 0)
+					.transition(transitionLine)
+					.attr("marker-end", "url(#arrowhead)");
+			}
+
+			//매줄의 5번째 화살표 위치 변경
+			if (squareCount > 0 && squareCount % squaresPerRow == 0) {
+				// let line = svg.append("line")
+				//   .attr("x1", (squareCount - 1) % squaresPerRow * (squareSize + margin) + (squareSize * 0.5))
+				//   .attr("y1", Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + squareSize)
+				//   .attr("x2", x + (squareSize * 0.5))
+				//   .attr("y2", y)
+				//   .attr("stroke", arrowColor)
+				//   .attr("stroke-width", 2)
+				//   .attr("marker-end", "url(#arrowhead)");
+
+				// 라인 3개 긋기
+				let firstStandardX = (squareCount - 1) % squaresPerRow * (squareSize + margin) + (squareSize * 0.5)
+				let firstStandardY = Math.floor((squareCount - 1) / squaresPerRow) * (squareSize + margin) + squareSize
+				let secondStandardX = y - (margin * 0.5)
+				let thirdStandardX = x + (squareSize * 0.5)
+
+				// 1px 보정
+				firstStandardX = firstStandardX + 1
+				firstStandardY = firstStandardY + 1
+
+				let line1 = svg.append("line")
+					.attr("x1", firstStandardX)
+					.attr("y1", firstStandardY + 1)
+					.attr("x2", firstStandardX)
+					.attr("y2", secondStandardX + 1)
+					.attr("stroke", arrowColor)
+					.attr("stroke-width", arrowSize);
+
+				const lineLength1 = line1.node().getTotalLength();
+				line1.attr("stroke-dashoffset", lineLength1)
+					.attr("stroke-dasharray", lineLength1)
+					.transition(transitionLine)
+					.attr("stroke-dashoffset", 0);
+
+
+				let line2 = svg.append("line")
+					.attr("x1", firstStandardX)
+					.attr("y1", secondStandardX)
+					.attr("x2", thirdStandardX)
+					.attr("y2", secondStandardX)
+					.attr("stroke", arrowColor)
+					.attr("stroke-width", arrowSize);
+
+				const transitionLine2 = d3
+					.transition()
+					.ease(d3.easeSin)
+					.duration(animationSpeed)
+					.delay(700);
+				const lineLength2 = line2.node().getTotalLength();
+				line2.attr("stroke-dashoffset", lineLength2)
+					.attr("stroke-dasharray", lineLength2)
+					.transition(transitionLine2)
+					.attr("stroke-dashoffset", 0);
+
+				let line3 = svg.append("line")
+					.attr("x1", thirdStandardX)
+					.attr("y1", secondStandardX - 1)
+					.attr("x2", thirdStandardX)
+					.attr("y2", y)
+					.attr("stroke", arrowColor)
+					.attr("stroke-width", arrowSize);
+
+
+				const transitionLine3 = d3
+					.transition()
+					.ease(d3.easeSin)
+					.duration(animationSpeed)
+					.delay(1400);
+				const lineLength3 = line3.node().getTotalLength();
+				line3.attr("stroke-dashoffset", lineLength3)
+					.attr("stroke-dasharray", lineLength3)
+					.transition(transitionLine3)
+					.attr("stroke-dashoffset", 0)
+					.transition(transitionLine3)
+					.attr("marker-end", "url(#arrowhead)");
+			}
+			squareCount++;
+		}
+	</script>
+</body>
+
+</html>
