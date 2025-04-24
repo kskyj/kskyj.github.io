@@ -59,6 +59,25 @@
 
 ## 3. Word 파일 다운로드 및 이메일 전송
 
-- ChatGPT가 제공한 `.docx` 파일을 다운로드한 후, **RPA 등록한 메일로 회사 메일 주소로 전송**
+### 3.1 Word 파일 MarkDown 형태 확인
+- 다운로드된 파일을 열고 확인합니다.
+- Confluence 에 Markdown 으로 Import 하기 위해서는, 아래와 같이 Markdown Raw Text 형태(#, * 등 이 있어야함)여야 합니다.
+- Markdown Raw Text 형태가 아니라면, ChatGPT에게 **Markdown 형식으로 raw text 형태로 word파일 만들어줘** 라고 요청하고, 다시 다운로드 하세요.
+![step16](images/clova_step_16.png)
+
+### 3.2 이메일 전송
+- ChatGPT가 제공한 `.docx` 파일을 다운로드한 후, **RPA 등록한 메일로 회사 메일 주소에 word파일을 첨부하고 전송**
+- **Word** 파일과 같은 문서 파일만 RPA로 자동으로 반입됩니다.
 - **발신자:** RPA에 등록한 메일 (예: `fragilememor@naver.com`)
 - **수신자:** 본인 회사 메일 (예: `kskyj@kbfg.com`)
+
+---
+
+## 4. 내부망 Confluence 에 게시
+
+### 4.1 내부 반입 파일 열기
+- 웹메일 RPA가 정상적으로 설정된 경우 쪽지로 수신한 Word 파일을 로드합니다.
+
+### 4.2 Confluence 에 등록
+- Confluence 에서 **게시할 페이지로 이동** 후에 가운데 상단 **만들기 옆 ... 버튼** 을 선택하고, **Import 회의록**을 선택하고 만들기를 선택 합니다.
+- 페이지 제목을 작성하고, **markup으로 변경하고 추가하세요 내용을 삭제**하고, **Ctrl + Shift + d** 를 선택하여 **문법 삽입** 에 Word 내용을 복사하면 완료 입니다. 
