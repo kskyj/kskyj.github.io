@@ -27,7 +27,7 @@
     {"key": "d9b00a0f458c14242c39349d721a7cf4966a83693c71696be39a7b80ef356c10", "end_date": "2026-03-15"},
     {"key": "d65bbe380f7bbb858ef71d5eaa8c33b6007ae026652d37368da17f0821bcbb27", "end_date": "2026-03-15"},
     {"key": "e409b6009449a8378cad623cac99c3ddb5c61607f2deffc1d472e666f6767501", "end_date": "2025-12-17"},
-    {"key": "4154d0b4dafbd65229bbe364a7d71c1f7a149b386e37dd9e8931efac28c4eb0c", "end_date": "2025-09-18"},
+    {"key": "4154d0b4dafbd65229bbe364a7d71c1f7a149b386e37dd9e8931efac28c4eb0c", "end_date": "2025-12-18"},
     {"key": "4849abdb45fe69adbcfe8fe66a76186f3453fd03129eb339dd759eb3501ef30a", "end_date": "2026-01-19"},
     {"key": "48714d3de39e475bbcdd83cf4b603ca870745b60419c29fff2a50bb6b1338dd0", "end_date": "2025-11-26"},
     {"key": "815aef4ede674393a764098ec372cb215e29dfc8817afdff848917c9a973df6a", "end_date": "2026-03-26"},
@@ -132,7 +132,6 @@
     {"key": "9a94ed46ff37ec68785c1a7a242005bad85f94e700f22481e06f2a67b6114c1d", "end_date": "2026-08-24"},
     {"key": "a9a14e901703fe9a1af82ae601271ffef59894ca56df53d20a07fd605175f04a", "end_date": "2025-12-11"},
     {"key": "13c98d9c6a8b1625c1d73a31b44918705521da7c0c0bcabb6a7c97cf0d870b76", "end_date": "2026-03-12"},
-    {"key": "23654d2af33576edbc9104489606cc5c7e7978bcb0f25a581d9ca2a6b706c6fd", "end_date": "2025-12-12"},
     {"key": "6c66365eb2e030502294a49831f7af5c8db2296ddf77e3f1008e83195797ff59", "end_date": "3000-01-01"}
   ]
 }
