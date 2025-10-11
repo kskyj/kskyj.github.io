@@ -1,6 +1,5 @@
 {
   "license": [
-    {"key": "9a33b9fc065826a798c23698dbfa043bf4d99407d4a88bdfc42e52443da2a747", "end_date": "3000-01-01"},
     {"key": "82ed06c63c2b1f2e1a0f30e557881666fd77b713b8a14cf579a055e4b5119140", "end_date": "2026-12-31"},
     {"key": "7f4bed24da901aa7a30e089898e146f4be2c9ea52b145002f66515f0121f49af", "end_date": "2025-12-31"},
     {"key": "8b7802bbb8935118f648288b5806c62e1796f692a824dcb7105d64a579c614e9", "end_date": "2026-03-05"},
@@ -138,6 +137,6 @@
     {"key": "74ba46d9653e066007b25a0c102d4c3bf34ef46ce04cebd0f04a7517824d0abf", "end_date": "2026-01-07"},
     {"key": "3d9059844a17efff8a33816f827765e9bb6d9c7a519d98eb1fdf7a2a9d3a4bcf", "end_date": "2026-10-07"},
     {"key": "04bb91d385ec07b7051444ddcfcb4a99aab79b1ac29ecdbaffa26d4f584b3ec9", "end_date": "2026-10-10"},
-    {"key": "6c66365eb2e030502294a49831f7af5c8db2296ddf77e3f1008e83195797ff59", "end_date": "3000-01-01"}
+    {"key": "9a33b9fc065826a798c23698dbfa043bf4d99407d4a88bdfc42e52443da2a747", "end_date": "3000-01-01"}
   ]
 }
