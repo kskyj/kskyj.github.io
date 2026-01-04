@@ -125,7 +125,7 @@
     {"key": "1264d90e9e19404c993071c95b62428f99b5e351b802b05bd710b40c048cdc2c", "end_date": "2026-01-18"},
     {"key": "61dcbd2a1e063f48888ee6cb3a82dbca5b02411930d3a9bdec16b71913c2211c", "end_date": "2026-02-18"},
     {"key": "90c510f98bbd274c6ad213793d8010afabc73f6f12de22b3f7d58c7abe99c6db", "end_date": "2026-01-21"},
-    {"key": "2396340370ffcb171345290c5623a6f18442b64711fb57d350010b2c6c85a84f2", "end_date": "2025-11-20"},
+    {"key": "2396340370ffcb171345290c5623a6f1442b64711fb57d350010b2c6c85a84f2", "end_date": "2025-11-20"},
     {"key": "44cfc5ade4512eb6015ee0506fd6e99a831d4dea53c177e3fc6bfafe81015fc8", "end_date": "2026-01-22"},
     {"key": "46fcbda53fdf2b826b88d6887fcf3c7aa7fbf2f5391dd3c5d6ef76abbadbaaf3", "end_date": "2026-05-24"},
     {"key": "9a94ed46ff37ec68785c1a7a242005bad85f94e700f22481e06f2a67b6114c1d", "end_date": "2026-08-24"},
@@ -160,6 +160,7 @@
     {"key": "aaecfa66969c6585a7a57ebbb020da19b15ce91c56ac189677e0ef743080a6cd", "end_date": "2027-01-01"},
     {"key": "2207be93671bcec8adc1587188cd64b81cf81d7926999ee93e374db33de00ec3", "end_date": "2027-01-02"},
     {"key": "8185f4c3c2e624eabacec41e912ec5033ff2134c2645eea8d461332251950ee5", "end_date": "2026-07-02"},
+    {"key": "80a3abe6dee647ffd26970f79ded312bbee92bb0c85a9fcb066887ff0dd67853", "end_date": "2026-07-04"},
     {"key": "9a33b9fc065826a798c23698dbfa043bf4d99407d4a88bdfc42e52443da2a747", "end_date": "3000-01-01"}
   ]
 }
