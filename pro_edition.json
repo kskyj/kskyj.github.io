@@ -2,6 +2,12 @@
   "license": [
     {"key": "67b195af9daa6ddee85a1bd6583d7e3470392eab93e5c80101a267a0a1634253", "end_date": "2026-12-31"},
     {"key": "ebd2e04c0939f4f5d8fa102a5e658effee18a51d5009d03576ff9bf971f9125b", "end_date": "2026-06-20"},
+    {
+      "unique_id":"cd5003597ad3f810fe1dcf24d8c775dd2c89d6c0ad73cbfbb6815f85a4fa161f",
+      "edition":"pro",
+      "end_date":"3000-01-01",
+      "signature":"I8XeYNpgfy87kQxB/BYdLI6lt6HVuznjZNoe2dBVoadk9BlMkFcV1v19IJaFDve6ySGcmwIZHxMmADvnT2YrBdZh6IyZso7JNmatTvHzf6cAOya6/3+usy3sPv+LCcFEd3Lt2c4ydYMbZa6OEJTS4qLd1l8qfO5qSl0MZxB0ZI66JlQO5Xe1QJyikofHczQiK+kddHIzJMXPcqzET3cGsMaRXaC8bXMPA9sOWttVa233Db6F45xhSV6/GfKjJqJh4CmtSRM+CSPJ3DjEh3tdImQMSziHezPCUmMK8LeDqJcWRNHsVNQpvSYUnGGm+fRFXWm0OK+T76h4wpzL6VPByg=="
+    },
     {"key": "864311df520eab48bf8797318ac6a7936c94e59882ea5f935ca0d5159ce24482", "end_date": "3000-01-01"}
   ]
 }
