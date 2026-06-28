@@ -3,6 +3,12 @@
     {"key": "67b195af9daa6ddee85a1bd6583d7e3470392eab93e5c80101a267a0a1634253", "end_date": "2026-12-31"},
     {"key": "ebd2e04c0939f4f5d8fa102a5e658effee18a51d5009d03576ff9bf971f9125b", "end_date": "2026-10-20"},
     {
+      "key": "aad73245e8ae811e955eb2091eb7931e800752e3abe796181bd81b4e66077b5d",
+      "edition": "pro",
+      "end_date": "2026-12-31",
+      "signature": "UumsspYkKYKnxkehI1JkollQI58Ba6ZT4khyIKDMKWHhkgY58y4+4j4oBmNMM8tesFx1jp1g9IS0OaFxeZx/4D0Oye9GTlSWHVaxPRHaN5CoMvK6k77KISFo5MhhuSYdccf6UzX69hRN2EFTTC+hBArDxiBR5pIKOadcVwuZYfzVlBlSWreTvFCyTeLkvZrIob8PeYrFQPrD5rIerMtrrFWCMFri7Crr3W9f/YzWx4it6Z1FwYg/xZQkf5jnVURQA52s2vBbS/GbCHKHDsnCzyZJ5WhqOmXxjTH+/fUEU9w3t7aGyAum7qapYZYT32TgW+ONGpPGi9y0h4FfHHppYg=="
+    },
+    {
       "key":"cd5003597ad3f810fe1dcf24d8c775dd2c89d6c0ad73cbfbb6815f85a4fa161f",
       "edition":"pro",
       "end_date":"3000-01-01",
